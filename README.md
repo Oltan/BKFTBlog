@@ -4,14 +4,24 @@ A modern, fully-featured blog website for a university science fiction and fanta
 
 ## ✨ Features
 
-- 📝 **Articles & Blog Posts** - Share news, analysis, and discussions
-- ⭐ **Reviews** - Rate and review movies, comics, video games, and tabletop RPGs
-- 🎲 **RPG Guides** - Tutorials and guides for role-playing games
-- 🎉 **Events System** - Create and register for club activities
-- 🎨 **Multiple Themes** - Switch between Cyberpunk, Medieval Fantasy, and Space Opera themes
-- 👥 **User System** - Authentication, profiles, and content submission
-- 💬 **Comments** - Engage with articles and reviews
-- 📱 **Responsive Design** - Works perfectly on all devices
+### Content Management
+- 📝 **Articles & Blog Posts** - Submit and read news, analysis, and discussions
+- ⭐ **Reviews** - Submit and rate movies, comics, video games, and tabletop RPGs (1-5 stars)
+- 🎲 **RPG Guides** - Create and share tutorials for role-playing games
+- 🎉 **Events System** - Create club activities with registration and attendee tracking
+
+### User Features
+- 🔐 **Full Authentication** - Register, login, and logout functionality
+- 👤 **User Profiles** - Manage your profile and view your contributions
+- 📊 **Personal Dashboard** - Track all your submitted content in one place
+- ✍️ **Content Submission** - Easy-to-use forms for articles, reviews, events, and guides
+- ✅ **Moderation System** - All submissions are reviewed before publishing
+
+### Design & Experience
+- 🎨 **4 Unique Themes** - Switch between Cyberpunk, Medieval Fantasy, Space Opera, and Default
+- 📱 **Fully Responsive** - Works perfectly on desktop, tablet, and mobile
+- ⚡ **Fast & Modern** - Built with Next.js 14 for optimal performance
+- 🎯 **Intuitive Navigation** - Easy-to-use interface for all users
 
 ## 🚀 100% Free Hosting Stack
 
@@ -159,26 +169,82 @@ User authentication is handled by Supabase Auth, which includes:
 
 To enable authentication features, you'll need to configure Supabase Auth in your project dashboard.
 
+## 👤 User Management
+
+### Registration & Login
+
+Users can register and login at:
+- `/auth/register` - Create a new account
+- `/auth/login` - Login to existing account
+
+After logging in, users get access to:
+- Personal dashboard at `/dashboard`
+- Content submission forms
+- Profile management
+
+### Submitting Content
+
+Authenticated users can submit content through these pages:
+
+1. **Submit Article** (`/submit/article`):
+   - Title, category, excerpt, and full content
+   - Supports categories: Analysis, News, Discussion, Lists, Educational, Opinion
+
+2. **Submit Review** (`/submit/review`):
+   - Title, type (Movie/Game/RPG/Comic), rating (1-5 stars)
+   - Quick take and full review
+
+3. **Create Event** (`/submit/event`):
+   - Title, type, date, time, location
+   - Maximum attendees (optional)
+   - Full description
+
+4. **Submit RPG Guide** (`/submit/guide`):
+   - Title, game system, difficulty level
+   - Topics (comma-separated)
+   - Full guide content
+
+### Dashboard Features
+
+The dashboard (`/dashboard`) shows:
+- User profile information
+- All submitted articles (with publication status)
+- All submitted reviews (with publication status)
+- All created events
+- All submitted RPG guides (with publication status)
+
+### Moderation System
+
+- All user-submitted content starts as **Pending**
+- Moderators can review and approve content
+- Only **Published** content appears on public pages
+- Users can track their submission status in the dashboard
+
 ## 🎯 Next Steps
 
-1. **Enable Authentication**:
-   - Go to Supabase → Authentication → Providers
-   - Enable email authentication or OAuth providers
+1. **Enable Email Authentication** (Required):
+   - Go to Supabase → Authentication → Settings
+   - Configure email templates
+   - Enable email confirmations (optional)
+   - Or enable OAuth providers (Google, GitHub, etc.)
 
-2. **Add Content**:
-   - Create test articles, reviews, and events through the database
-   - Or build admin forms to add content through the UI
+2. **Test User Flow**:
+   - Register a test account
+   - Submit an article, review, event, or guide
+   - View submissions in dashboard
+   - Manually approve content in Supabase
 
 3. **Customize Themes**:
    - Edit `tailwind.config.ts` to adjust colors
    - Modify `app/globals.css` for theme-specific styles
+   - Add custom fonts or animations
 
-4. **Add Features**:
-   - User profiles and dashboards
-   - Content submission forms
-   - Search functionality
-   - Comment system
-   - Newsletter integration
+4. **Optional Enhancements**:
+   - Add admin panel for content moderation
+   - Implement comment system
+   - Add search functionality
+   - Create email notifications
+   - Add image upload for content
 
 ## 🛠️ Tech Stack Details
 

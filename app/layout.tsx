@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/lib/theme-context";
+import { AuthProvider } from "@/lib/auth-context";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
@@ -16,11 +17,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <ThemeProvider>
-          <Navbar />
-          <main className="min-h-screen">
-            {children}
-          </main>
+        <AuthProvider>
+          <ThemeProvider>
+            <Navbar />
+            <main className="min-h-screen">
+              {children}
+            </main>
           <footer className="mt-20 py-8 border-t border-gray-300 dark:border-gray-700">
             <div className="max-w-7xl mx-auto px-6 text-center">
               <p>&copy; 2024 BKFT - Science Fiction & Fantasy Culture Club</p>
@@ -29,7 +31,8 @@ export default function RootLayout({
               </p>
             </div>
           </footer>
-        </ThemeProvider>
+          </ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   );

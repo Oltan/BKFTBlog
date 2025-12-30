@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function ArticlesPage() {
   const articles = [
     {
@@ -50,9 +52,9 @@ export default function ArticlesPage() {
       </div>
 
       <div className="mt-12 text-center">
-        <button className="btn-primary px-8 py-3 rounded-lg font-semibold">
+        <Link href="/submit/article" className="inline-block btn-primary px-8 py-3 rounded-lg font-semibold">
           Submit Your Article
-        </button>
+        </Link>
       </div>
     </div>
   );

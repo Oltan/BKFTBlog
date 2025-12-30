@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function EventsPage() {
   const upcomingEvents = [
     {
@@ -90,9 +92,9 @@ export default function EventsPage() {
       </div>
 
       <div className="mt-12 text-center">
-        <button className="btn-primary px-8 py-3 rounded-lg font-semibold">
-          Propose an Event
-        </button>
+        <Link href="/submit/event" className="inline-block btn-primary px-8 py-3 rounded-lg font-semibold">
+          Create an Event
+        </Link>
       </div>
     </div>
   );

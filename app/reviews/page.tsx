@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function ReviewsPage() {
   const reviews = [
     {
@@ -69,9 +71,9 @@ export default function ReviewsPage() {
       </div>
 
       <div className="mt-12 text-center">
-        <button className="btn-primary px-8 py-3 rounded-lg font-semibold">
+        <Link href="/submit/review" className="inline-block btn-primary px-8 py-3 rounded-lg font-semibold">
           Submit Your Review
-        </button>
+        </Link>
       </div>
     </div>
   );

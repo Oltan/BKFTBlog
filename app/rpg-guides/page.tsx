@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function RPGGuidesPage() {
   const guides = [
     {
@@ -89,9 +91,9 @@ export default function RPGGuidesPage() {
       </div>
 
       <div className="text-center">
-        <button className="btn-primary px-8 py-3 rounded-lg font-semibold">
+        <Link href="/submit/guide" className="inline-block btn-primary px-8 py-3 rounded-lg font-semibold">
           Submit Your Guide
-        </button>
+        </Link>
       </div>
     </div>
   );
