@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --theme: 'default';
+  }
+
+  body {
+    @apply transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  /* Cyberpunk Theme */
+  .theme-cyberpunk {
+    @apply bg-cyber-dark text-cyber-primary;
+  }
+
+  .theme-cyberpunk .header {
+    @apply bg-black/90 border-b-2 border-cyber-primary;
+  }
+
+  .theme-cyberpunk .card {
+    @apply bg-gray-900 border border-cyber-primary shadow-lg shadow-cyber-primary/50;
+  }
+
+  .theme-cyberpunk .btn-primary {
+    @apply bg-cyber-primary text-cyber-dark hover:bg-cyber-secondary hover:text-white;
+  }
+
+  /* Medieval Fantasy Theme */
+  .theme-fantasy {
+    @apply bg-fantasy-parchment text-fantasy-dark;
+  }
+
+  .theme-fantasy .header {
+    @apply bg-fantasy-burgundy text-fantasy-gold border-b-4 border-fantasy-gold;
+  }
+
+  .theme-fantasy .card {
+    @apply bg-white border-2 border-fantasy-dark shadow-xl;
+  }
+
+  .theme-fantasy .btn-primary {
+    @apply bg-fantasy-burgundy text-fantasy-gold hover:bg-fantasy-gold hover:text-fantasy-burgundy;
+  }
+
+  /* Space Opera Theme */
+  .theme-space {
+    @apply bg-space-dark text-white;
+  }
+
+  .theme-space .header {
+    @apply bg-gradient-to-r from-space-blue to-space-purple border-b border-space-cyan;
+  }
+
+  .theme-space .card {
+    @apply bg-gray-900/50 border border-space-cyan shadow-lg shadow-space-purple/30 backdrop-blur-sm;
+  }
+
+  .theme-space .btn-primary {
+    @apply bg-gradient-to-r from-space-purple to-space-cyan text-white hover:from-space-cyan hover:to-space-purple;
+  }
+
+  /* Common Utilities */
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px currentColor;
+  }
+
+  .neon-border {
+    box-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+  }
+}
